@@ -53,4 +53,4 @@ add_action('plugins_loaded', function () {
     $bc_woocommerce_mpay24_gateway = new \BlueChip\WooCommerce\Mpay24Gateway\Plugin();
     // Load the plugin.
     $bc_woocommerce_mpay24_gateway->load();
-});
+}, 10, 0);
