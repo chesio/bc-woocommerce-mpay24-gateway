@@ -18,7 +18,7 @@ abstract class IpTools
         [$net, $mask] = explode('/', $subnet);
 
         $_net = ip2long($net);
-        $_mask = ~((1 << (32 - $mask)) - 1);
+        $_mask = ~((1 << (32 - intval($mask))) - 1);
 
         $_ip = ip2long($ip);
 
