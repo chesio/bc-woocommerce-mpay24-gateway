@@ -8,23 +8,12 @@ namespace BlueChip\WooCommerce\Mpay24Gateway;
 class Plugin
 {
     /**
-     * Load the plugin by hooking into WordPress actions and filters.
-     * Method should be invoked immediately on plugin load.
-     */
-    public function load()
-    {
-        // Register initialization method.
-        add_action('plugins_loaded', [$this, 'init'], 10, 0);
-    }
-
-
-    /**
      * Perform initialization tasks.
      * Method should be run in `plugins_loaded` hook.
      *
      * @action https://developer.wordpress.org/reference/hooks/plugins_loaded/
      */
-    public function init()
+    public function load()
     {
         if (class_exists('WC_Payment_Gateway')) {
             add_filter('woocommerce_payment_gateways', [$this, 'registerPaymentMethod'], 10, 1);

@@ -48,7 +48,7 @@ require_once __DIR__ . '/autoload.php';
 // Bootstrap mPAY24 PHP SDK (= effectively register autoloader for the SDK).
 require_once __DIR__ . '/includes/mpay24-php/bootstrap.php';
 
-add_action('init', function () {
+add_action('plugins_loaded', function () {
     // Construct plugin instance.
     $bc_woocommerce_mpay24_gateway = new \BlueChip\WooCommerce\Mpay24Gateway\Plugin();
     // Load the plugin.
