@@ -1,0 +1,31 @@
+{
+  "name": "chesio/bc-woocommerce-mpay24-gateway",
+  "type": "wordpress-plugin",
+  "description": "Integrate mPAY24 payment gateway into WooCommerce",
+  "homepage": "https://github.com/chesio/bc-woocommerce-mpay24-gateway",
+  "authors": [
+    {
+      "name": "Česlav Przywara",
+      "homepage": "https://www.chesio.com"
+    }
+  ],
+  "keywords": [
+    "wordpress", "wordpress-plugin"
+  ],
+  "support": {
+    "issues": "https://github.com/chesio/bc-woocommerce-mpay24-gateway/issues"
+  },
+  "require": {
+    "php": ">=7.1.0",
+    "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.3"
+  },
+  "scripts": {
+    "phpcs": "phpcs",
+    "test": [
+      "phpcs"
+    ]
+  }
+}
