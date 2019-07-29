@@ -114,6 +114,7 @@ abstract class IPN
      */
     public static function processConfirmationRequest()
     {
+        /** @var array<string, mixed> */
         $request_data = wp_unslash($_GET);
 
         $status = $request_data['STATUS'] ?? '';
@@ -142,7 +143,7 @@ abstract class IPN
 
     /**
      * @param array $data Request data.
-     * @return null|WC_Order Order instance if confirmation request is valid, null otherwise.
+     * @return null|\WC_Order Order instance if confirmation request is valid, null otherwise.
      */
     protected static function validateConfirmationRequest(array $data): ?\WC_Order
     {
@@ -211,7 +212,7 @@ abstract class IPN
      * @link https://docs.mpay24.com/docs/transaction-states All transaction states
      * @link https://docs.mpay24.com/docs/payment-notification#section-notification-values Request data items
      *
-     * @param \WC_Order $order_id
+     * @param \WC_Order $order
      * @param string $status
      * @param string $tid
      * @param string $mpay_tid
