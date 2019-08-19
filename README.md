@@ -1,4 +1,4 @@
-# WooCommerce mPAY24 Gateway
+# BC WooCommerce mPAY24 Gateway
 
 A WordPress plugin that integrates [mPAY24](https://www.mpay24.com/) payment gateway into [WooCommerce](https://woocommerce.com/).
 
