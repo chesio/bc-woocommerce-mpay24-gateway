@@ -110,8 +110,26 @@ class Mpay24
         $mdxi->Order->Price = $order->get_total();
         $mdxi->Order->Currency = $order->get_currency();
 
-        // Add customer data.
+        // Add customer name.
         $mdxi->Order->Customer = $order->get_billing_first_name() . ' ' . $order->get_billing_last_name();
+
+        // Add billing address.
+        $mdxi->Order->BillingAddr->setMode("ReadOnly");
+        $mdxi->Order->BillingAddr->Name = $order->get_billing_first_name() . ' ' . $order->get_billing_last_name();
+        $mdxi->Order->BillingAddr->Street = $order->get_billing_address_1();
+        if ($order->get_billing_address_2()) {
+            // Set only if provided, because mPAY24 payment page features an empty field otherwise...
+            $mdxi->Order->BillingAddr->Street2 = $order->get_billing_address_2();
+        }
+        $mdxi->Order->BillingAddr->Zip = $order->get_billing_postcode();
+        $mdxi->Order->BillingAddr->City = $order->get_billing_city();
+        if ($order->get_billing_state()) {
+            // Set only if provided, because mPAY24 payment page features an empty field otherwise...
+            $mdxi->Order->BillingAddr->State = $order->get_billing_state();
+        }
+        $mdxi->Order->BillingAddr->Country->setCode($order->get_billing_country());
+        $mdxi->Order->BillingAddr->Email = $order->get_billing_email();
+        $mdxi->Order->BillingAddr->Phone = $order->get_billing_phone();
 
         // Note: Redirect to "thank you" page even in case of error, because the order-received endpoint is not a mere
         // "Thank you" page. If order status is "failed", it will display proper message and offer an option to repeat
