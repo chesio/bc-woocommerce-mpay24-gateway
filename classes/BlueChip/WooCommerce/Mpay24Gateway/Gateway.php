@@ -19,7 +19,7 @@ class Gateway extends \WC_Payment_Gateway
 
 
     /**
-     * @var \BlueChip\WooCommerce\MPay24Gateway\Mpay24
+     * @var \BlueChip\WooCommerce\Mpay24Gateway\Mpay24
      */
     private $mpay24;
 

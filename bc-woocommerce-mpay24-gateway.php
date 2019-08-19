@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: WooCommerce mPAY24 Gateway
+ * Plugin Name: BC WooCommerce mPAY24 Gateway
  * Plugin URI: https://github.com/chesio/bc-woocommerce-mpay24-gateway
  * Description: Integrate mPAY24 payment gateway into WooCommerce
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Česlav Przywara <cp@bluechip.at>
  * Author URI: https://www.chesio.com
  * Requires PHP: 7.1
@@ -48,8 +48,9 @@ require_once __DIR__ . '/autoload.php';
 // Bootstrap mPAY24 PHP SDK (= effectively register autoloader for the SDK).
 require_once __DIR__ . '/includes/mpay24-php/bootstrap.php';
 
-// Construct plugin instance.
-$bc_woocommerce_mpay24_gateway = new \BlueChip\WooCommerce\Mpay24Gateway\Plugin();
-
-// Load the plugin.
-$bc_woocommerce_mpay24_gateway->load();
+add_action('plugins_loaded', function () {
+    // Construct plugin instance.
+    $bc_woocommerce_mpay24_gateway = new \BlueChip\WooCommerce\Mpay24Gateway\Plugin();
+    // Load the plugin.
+    $bc_woocommerce_mpay24_gateway->load();
+}, 10, 0);
