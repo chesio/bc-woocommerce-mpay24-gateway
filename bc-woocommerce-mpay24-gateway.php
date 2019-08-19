@@ -3,7 +3,7 @@
  * Plugin Name: BC WooCommerce mPAY24 Gateway
  * Plugin URI: https://github.com/chesio/bc-woocommerce-mpay24-gateway
  * Description: Integrate mPAY24 payment gateway into WooCommerce
- * Version: develop
+ * Version: 1.1.0
  * Author: Česlav Przywara <cp@bluechip.at>
  * Author URI: https://www.chesio.com
  * Requires PHP: 7.1
