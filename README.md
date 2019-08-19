@@ -11,3 +11,7 @@ A WordPress plugin that integrates [mPAY24](https://www.mpay24.com/) payment gat
 ## Compatibility
 
 Plugin is based on [mPAY24 PHP SDK](https://github.com/mpay24/mpay24-php) in version 4.3.2.
+
+## Limitations
+
+mPAY24 supports integration with a lot of payment providers (like PayPal, Klarna etc.), but the plugin currently only supports credit card payments.
