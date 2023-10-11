@@ -8,7 +8,7 @@
  * Author URI: https://www.chesio.com
  * Requires PHP: 7.1
  * Requires WP: 4.9
- * Tested up to: 5.3
+ * Tested up to: 6.2
  * Text Domain: bc-woocommerce-mpay24-gateway
  * GitHub Plugin URI: https://github.com/chesio/bc-woocommerce-mpay24-gateway
  */
