@@ -24,9 +24,9 @@ abstract class IPN
      * @var array List of IP ranges from which mPAY24 IPNs are pushed.
      */
     const MPAY24_SUBNETS = [
-        '213.164.25.224/27', // production system
-        '217.175.200.16/28', // production system
-        '213.208.153.58/32', // test system
+        '37.221.72.0/24',       // production system (from 2023-10-18)
+        '217.175.200.16/28',    // production system
+        '18.192.138.119/32',    // test system
     ];
 
 
